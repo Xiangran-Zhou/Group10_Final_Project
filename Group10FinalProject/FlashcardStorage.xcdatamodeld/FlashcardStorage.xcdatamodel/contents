@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="FlashcardEntity" representedClassName=".FlashcardEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="answer" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="question" optional="YES" attributeType="String"/>
+        <relationship name="parentSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlashcardSetEntity" inverseName="flashcards" inverseEntity="FlashcardSetEntity"/>
+    </entity>
+    <entity name="FlashcardSetEntity" representedClassName="FlashcardSetEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="groupID" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="flashcards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FlashcardEntity" inverseName="parentSet" inverseEntity="FlashcardEntity"/>
+    </entity>
+</model>
